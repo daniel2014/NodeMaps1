@@ -41,7 +41,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/texto_Cadstrar_Conta"
+                android:text="@string/texto_Cadastrar_Conta"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/editTextNome"

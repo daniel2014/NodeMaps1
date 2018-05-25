@@ -13,6 +13,9 @@ public class LoginUsuarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_usuario);
+
+        // == Alterando Título da Toobar === //
+        getSupportActionBar().setTitle("Login de Usuário");
     }
 
     public void botaoCadastroUsuario(View view){
