@@ -6,4 +6,168 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoginUsuarioActivity">
 
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:fillViewport="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorBranco_1"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/editText_Email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_email_cinza_24dp"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@+id/editTextSenha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/buttonTermosEServicos"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:background="@color/colorBranco_1"
+                android:text="@string/bt_NaoTemConta"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="34dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/texto_Acessar_Conta"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/editText_Email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <EditText
+                android:id="@+id/editTextSenha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_cadeado_cinza_24dp"
+                android:ems="10"
+                android:hint="Senha"
+                android:inputType="textPersonName|textPassword"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_Email" />
+
+            <Button
+                android:id="@+id/buttonEntrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/bt_Entrar"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBranco_1"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonTermosEServicos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextSenha" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:onClick="butaoHome"
+                android:text="Home"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="butaoInventario"
+                android:text="Inventário"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/button3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintTop_toTopOf="@+id/button" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/button4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button2"
+                app:layout_constraintTop_toTopOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button3"
+                app:layout_constraintTop_toTopOf="@+id/button3" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

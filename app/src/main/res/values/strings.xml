@@ -7,4 +7,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="bt_NaoTemConta">Não tem conta? Cadastre-se</string>
+    <string name="texto_Acessar_Conta">Acessar sua conta</string>
+    <string name="bt_Entrar">Entrar</string>
 </resources>
