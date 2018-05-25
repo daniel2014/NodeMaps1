@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginUsuarioActivity">
+    tools:context=".activity.LoginUsuarioActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:fillViewport="true"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
                 android:background="@color/colorBranco_1"
@@ -126,49 +128,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:onClick="butaoHome"
-                android:text="Home"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:onClick="botaoHome"
+                android:text="Principal"
                 android:textAllCaps="false"
-                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button2"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="butaoInventario"
-                android:text="Inventário"
-                android:textAllCaps="false"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/button3"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button"
-                app:layout_constraintTop_toTopOf="@+id/button" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/button4"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button2"
-                app:layout_constraintTop_toTopOf="@+id/button2" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button3"
-                app:layout_constraintTop_toTopOf="@+id/button3" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

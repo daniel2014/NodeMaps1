@@ -22,11 +22,8 @@ public class LoginUsuarioActivity extends AppCompatActivity {
         startActivity(new Intent(this, CadastroUsuarioActivity.class));
     }
 
-    public void butaoHome(View view){
+    public void botaoHome(View view){
         startActivity(new Intent(this, MainActivity.class));
     }
 
-    public void butaoInventario(View view){
-        startActivity(new Intent(this, InventarioActivity.class));
-    }
 }

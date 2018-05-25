@@ -1,5 +1,6 @@
 package com.danielrsoares.nodemaps.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,10 +18,16 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.danielrsoares.nodemaps.R;
+import com.danielrsoares.nodemaps.fragments.AtividadesFragment;
+import com.danielrsoares.nodemaps.fragments.HistoricoFragment;
+import com.danielrsoares.nodemaps.fragments.PrincipalFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private PrincipalFragment principalFragment;
+    private AtividadesFragment atividadesFragment;
+    private HistoricoFragment historicoFragment;
 
     // ===== Menu Inferior Principal ====
     private TextView mTextMessage;
@@ -30,21 +37,39 @@ public class MainActivity extends AppCompatActivity
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_prinvipal:
+
+                    //Fragment Principal
                     mTextMessage.setText(R.string.titulo_home);
+                    principalFragment = new PrincipalFragment(); //Fragment Principal
+                    android.support.v4.app.FragmentTransaction transaction_1 = getSupportFragmentManager().beginTransaction();
+                    transaction_1.replace(R.id.frameMain, principalFragment);
+                    transaction_1.commit();
                     return true;
-                case R.id.navigation_dashboard:
+
+                    //Fragment Atividades
+                case R.id.navigation_atividades:
                     mTextMessage.setText(R.string.titulo_atividades);
+                    atividadesFragment = new AtividadesFragment();//Fragment Principal
+                    android.support.v4.app.FragmentTransaction transaction_2 = getSupportFragmentManager().beginTransaction();
+                    transaction_2.replace(R.id.frameMain, atividadesFragment);
+                    transaction_2.commit();
                     return true;
-                case R.id.navigation_notifications:
+
+                    //Fragment Hitórico
+                case R.id.navigation_historico:
                     mTextMessage.setText(R.string.titulo_notificacao);
+                    historicoFragment = new HistoricoFragment();//Fragment Principal
+                    android.support.v4.app.FragmentTransaction transaction_3 = getSupportFragmentManager().beginTransaction();
+                    transaction_3.replace(R.id.frameMain, historicoFragment);
+                    transaction_3.commit();
                     return true;
             }
             return false;
         }
     };
 
-// OnCreate
+     // ============= Método => OnCreate =========================================================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +80,11 @@ public class MainActivity extends AppCompatActivity
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        principalFragment = new PrincipalFragment();
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameMain, principalFragment);
+        transaction.commit();
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -117,9 +147,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            startActivity(new Intent(this, MainActivity.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(this, InventarioActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

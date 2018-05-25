@@ -12,7 +12,12 @@
     <string name="bt_Entrar">Entrar</string>
     <string name="texto_Cadastrar_Conta">Cadastrar nova conta</string>
     <string name="bt_TermosEServicos">Concordo Termos e Privacidade</string>
+
+    //Apenas para teste do menu inferior principal
     <string name="titulo_home">Home</string>
     <string name="titulo_atividades">Atividades</string>
     <string name="titulo_notificacao">Notificação</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
