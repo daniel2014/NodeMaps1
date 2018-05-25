@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    //Cor Cadastro Node
+    <color name="colorPrimaryNode">#3F51B5</color>
+    <color name="colorPrimaryDarkNode">#303F9F</color>
+    <color name="colorAccentNode">#FF4081</color>
+
+    //Cor Cadastro Ativo
+    <color name="colorPrimaryAtivo">#3F51B5</color>
+    <color name="colorPrimaryDarkAtivo">#303F9F</color>
+    <color name="colorAccentAtivo">#FF4081</color>
+
+</resources>
