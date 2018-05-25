@@ -10,4 +10,6 @@
     <string name="bt_NaoTemConta">Não tem conta? Cadastre-se</string>
     <string name="texto_Acessar_Conta">Acessar sua conta</string>
     <string name="bt_Entrar">Entrar</string>
+    <string name="texto_Cadstrar_Conta">Cadastrar nova conta</string>
+    <string name="bt_TermosEServicos">Concordo Termos e Privacidade</string>
 </resources>

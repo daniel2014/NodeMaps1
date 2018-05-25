@@ -59,6 +59,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginStart="32dp"
                 android:background="@color/colorBranco_1"
+                android:onClick="botaoCadastroUsuario"
                 android:text="@string/bt_NaoTemConta"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"

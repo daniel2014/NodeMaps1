@@ -15,6 +15,10 @@ public class LoginUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_usuario);
     }
 
+    public void botaoCadastroUsuario(View view){
+        startActivity(new Intent(this, CadastroUsuarioActivity.class));
+    }
+
     public void butaoHome(View view){
         startActivity(new Intent(this, MainActivity.class));
     }
