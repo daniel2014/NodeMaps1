@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Node Maps</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Sair</string>
     <string name="bt_NaoTemConta">Não tem conta? Cadastre-se</string>
     <string name="texto_Acessar_Conta">Acessar sua conta</string>
     <string name="bt_Entrar">Entrar</string>
@@ -16,7 +16,7 @@
     //Apenas para teste do menu inferior principal
     <string name="titulo_home">Home</string>
     <string name="titulo_atividades">Atividades</string>
-    <string name="titulo_notificacao">Notificação</string>
+    <string name="titulo_notificacao">Histórico</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

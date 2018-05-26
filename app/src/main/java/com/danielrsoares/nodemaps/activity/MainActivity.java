@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity
                     android.support.v4.app.FragmentTransaction transaction_1 = getSupportFragmentManager().beginTransaction();
                     transaction_1.replace(R.id.frameMain, principalFragment);
                     transaction_1.commit();
+                    // == Alterando Título da Toobar === //
+                    getSupportActionBar().setTitle("Principal");
                     return true;
 
                     //Fragment Atividades
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity
                     android.support.v4.app.FragmentTransaction transaction_2 = getSupportFragmentManager().beginTransaction();
                     transaction_2.replace(R.id.frameMain, atividadesFragment);
                     transaction_2.commit();
+                    // == Alterando Título da Toobar === //
+                    getSupportActionBar().setTitle("Atividades");
                     return true;
 
                     //Fragment Hitórico
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity
                     android.support.v4.app.FragmentTransaction transaction_3 = getSupportFragmentManager().beginTransaction();
                     transaction_3.replace(R.id.frameMain, historicoFragment);
                     transaction_3.commit();
+                    // == Alterando Título da Toobar === //
+                    getSupportActionBar().setTitle("Histórico");
                     return true;
             }
             return false;
@@ -146,9 +152,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_principal) {
             startActivity(new Intent(this, MainActivity.class));
-        } else if (id == R.id.nav_gallery) {
+            finish();//Fecha a Tela anterior para não ficar na pilha
+        } else if (id == R.id.nav_inventario) {
             startActivity(new Intent(this, InventarioActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
