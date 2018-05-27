@@ -43,7 +43,7 @@
             android:layout_marginStart="64dp"
             android:paddingBottom="4dp"
             android:paddingTop="4dp"
-            android:text="H"
+            android:text="OC:"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:padding="4dp"
-            android:text="H"
+            android:text="12058"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -109,7 +109,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:background="@color/colorCinza_1"
-            android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/buttonIniciarNode"
             app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
             app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -150,10 +149,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerInventario"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="100dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="300dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
