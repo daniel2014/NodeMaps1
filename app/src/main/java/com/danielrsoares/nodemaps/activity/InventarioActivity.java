@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.danielrsoares.nodemaps.R;
+import com.danielrsoares.nodemaps.config.ConfiguracaoFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class InventarioActivity extends AppCompatActivity {
 
@@ -17,6 +19,10 @@ public class InventarioActivity extends AppCompatActivity {
         // == Alterando Título da Toobar === //
         getSupportActionBar().setTitle("Inventário");
     }
+
+
+
+
 
     public void BotaoCadastrarNode(View view){
         startActivity(new Intent(this, CadastroNodeActivity.class));

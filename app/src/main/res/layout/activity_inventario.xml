@@ -50,13 +50,13 @@
                     android:textStyle="bold"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/spinnerCidadeNode"
+                    app:layout_constraintEnd_toStartOf="@+id/spinnerInventarioCidade"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
-                    android:id="@+id/spinnerCidadeNode"
+                    android:id="@+id/spinnerInventarioCidade"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
                     android:layout_marginBottom="2dp"
@@ -95,14 +95,14 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textAtualizandoNode"
+                    app:layout_constraintEnd_toStartOf="@+id/textInventarioNode"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textAtualizandoNode"
+                    android:id="@+id/textInventarioNode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
