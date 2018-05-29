@@ -9,8 +9,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="360dp"
+        android:layout_height="511dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,50 +32,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/editText_Email"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="4dp"
-                android:drawableStart="@drawable/ic_email_cinza_24dp"
-                android:ems="10"
-                android:hint="E-mail"
-                android:inputType="textEmailAddress"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toTopOf="@+id/editTextSenha"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-            <Button
-                android:id="@+id/buttonTermosEServicos"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginStart="32dp"
-                android:background="@color/colorBranco_1"
-                android:onClick="botaoCadastroUsuario"
-                android:text="@string/bt_NaoTemConta"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="34dp"
+                android:layout_marginBottom="32dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/texto_Acessar_Conta"
@@ -89,7 +50,25 @@
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <EditText
-                android:id="@+id/editTextSenha"
+                android:id="@+id/editText_Email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_email_cinza_24dp"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/editText_Senha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@+id/editText_Senha"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -100,17 +79,17 @@
                 android:ems="10"
                 android:hint="Senha"
                 android:inputType="textPersonName|textPassword"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+                app:layout_constraintBottom_toTopOf="@+id/button_LoginEntrar"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_Email" />
 
             <Button
-                android:id="@+id/buttonEntrar"
+                android:id="@+id/button_LoginEntrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="24dp"
                 android:background="@color/colorPrimary"
@@ -118,24 +97,27 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorBranco_1"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/buttonTermosEServicos"
+                app:layout_constraintBottom_toTopOf="@+id/button4"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextSenha" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_Senha" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="0dp"
+                android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginStart="32dp"
-                android:onClick="botaoHome"
-                android:text="Principal"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:onClick="botaoActivityCadastro"
+                android:text="@string/bt_NaoTemConta"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_LoginEntrar" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

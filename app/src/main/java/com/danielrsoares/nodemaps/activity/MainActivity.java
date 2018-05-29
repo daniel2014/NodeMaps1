@@ -18,13 +18,16 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.danielrsoares.nodemaps.R;
+import com.danielrsoares.nodemaps.config.ConfiguracaoFirebase;
 import com.danielrsoares.nodemaps.fragments.AtividadesFragment;
 import com.danielrsoares.nodemaps.fragments.HistoricoFragment;
 import com.danielrsoares.nodemaps.fragments.PrincipalFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
     private PrincipalFragment principalFragment;
     private AtividadesFragment atividadesFragment;
     private HistoricoFragment historicoFragment;
@@ -133,16 +136,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.acao_menuSuperior) {
+            autenticacao.signOut();
+            startActivity(new Intent(this, LoginUsuarioActivity.class));
+            finish();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
