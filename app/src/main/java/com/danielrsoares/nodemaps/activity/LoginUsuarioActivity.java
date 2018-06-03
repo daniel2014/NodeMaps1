@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.danielrsoares.nodemaps.R;
 import com.danielrsoares.nodemaps.config.ConfiguracaoFirebase;
 import com.danielrsoares.nodemaps.model.Usuario;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import io.fabric.sdk.android.Fabric;
 
 public class LoginUsuarioActivity extends AppCompatActivity {
 
@@ -29,6 +31,7 @@ public class LoginUsuarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_login_usuario);
 
         // == Alterando Título da Toobar === //

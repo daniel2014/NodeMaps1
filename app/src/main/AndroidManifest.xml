@@ -31,6 +31,10 @@
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="16f34916800e12a5f35a99b9c7c3caefca1a0bb7" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

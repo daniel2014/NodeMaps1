@@ -1,23 +1,13 @@
 package com.danielrsoares.nodemaps.adapter;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.List;
-import com.danielrsoares.nodemaps.R;
-import com.danielrsoares.nodemaps.model.Inventario;
 
-
-
-public class AdapterInventario {
 /*
-    List<Inventario> inventarios;
+public class AdapterInventario {
+
+    List<MovInventario> inventarios;
     Context context;
 
-    public AdapterInventario(List<Inventario> inventarios, Context context){
+    public AdapterInventario(List<MovInventario> inventarios, Context context){
         this.inventarios = inventarios;
         this.context = context;
     }
@@ -30,7 +20,7 @@ public class AdapterInventario {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position){
-        Inventario inventario = inventarios.get(position);
+        MovInventario inventario = inventarios.get(position);
 
         holder.node.setText(inventario.getNode());
         holder.totalAtivos.setText(inventario.getTotalAtivos());
@@ -53,5 +43,6 @@ public class AdapterInventario {
             totalAtivos = itemView.findViewById(R.id.textAdapterInventarioTotalNode);
         }
     }
-*/
+
 }
+*/
