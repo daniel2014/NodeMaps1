@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorTranparente"
+    android:background="@color/colorTransparente2"
     tools:context=".activity.CadastroNodeActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            app:cardBackgroundColor="@color/grey_300"
             app:cardElevation="1dp"
             app:cardUseCompatPadding="true"
             app:contentPadding="6dp"
@@ -31,28 +32,53 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="400dp"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:id="@+id/imageFechar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="4dp"
+                    android:elevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_fechar_azul_24dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_CastNodeCidades"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/grey_300"
+                    android:entries="@array/cidades"
+                    app:layout_constraintEnd_toStartOf="@+id/imageFechar"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
                     android:elevation="0dp"
                     android:padding="2dp"
                     android:text="NODE"
                     android:textColor="@color/colorBlack"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
+                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/spinner_CastNodeCidades" />
 
                 <EditText
                     android:id="@+id/editTextCadastroNode"
                     android:layout_width="133dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_marginStart="3dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@color/colorTranparente"
                     android:elegantTextHeight="false"
                     android:elevation="0dp"
@@ -62,10 +88,6 @@
                     android:inputType="textVisiblePassword"
                     android:maxLength="5"
                     android:padding="2dp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorCinzaNode"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -73,33 +95,25 @@
 
                 <View
                     android:id="@+id/divider"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="1dp"
+                    android:layout_marginStart="7dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-                <Spinner
-                    android:id="@+id/spinner_CastNodeCidades"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:entries="@array/cidades"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/divider" />
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textInputLayout2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/spinner_CastNodeCidades">
+                    app:layout_constraintTop_toBottomOf="@+id/textView8">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/editTextCadastroBairro"
@@ -113,7 +127,9 @@
                     android:id="@+id/textInputLayout4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="3dp"
+                    android:layout_marginEnd="4dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
@@ -130,7 +146,9 @@
                     android:id="@+id/textInputLayout5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="3dp"
+                    android:layout_marginEnd="4dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
@@ -161,6 +179,31 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/spinner_CastNodeCidades"
+                    app:layout_constraintTop_toTopOf="@+id/spinner_CastNodeCidades"
+                    app:srcCompat="@drawable/ic_abrir_cidades_azul_24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar_CadastroNode"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="8dp"
+                    android:max="100"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>

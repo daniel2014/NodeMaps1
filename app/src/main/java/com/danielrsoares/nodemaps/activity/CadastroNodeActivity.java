@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +18,13 @@ import com.danielrsoares.nodemaps.model.MovInventario;
 
 public class CadastroNodeActivity extends AppCompatActivity {
 
+    private ImageView botaoFechar;
     private TextView campoNode;
-    private TextInputEditText campoCidade, campoBairro, campoEndereco, campoNumero;
+    private TextInputEditText campoBairro, campoEndereco, campoNumero;
+
+    private ProgressBar progressBarCadastroNode;
+    private int progresso = 0;
+
     private Spinner campoCidades;
     private MovInventario movInventario;
     private String[] estados_doBrasil;
@@ -29,6 +36,12 @@ public class CadastroNodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_node);
 
+        progressBarCadastroNode = findViewById(R.id.progressBar_CadastroNode);
+        progressBarCadastroNode.setVisibility(View.GONE);
+
+        botaoFechar = findViewById(R.id.imageFechar);
+
+
         campoNode = findViewById(R.id.editTextCadastroNode);
         campoBairro = findViewById(R.id.editTextCadastroBairro);
         campoEndereco = findViewById(R.id.editTextCadastroEndereco);
@@ -37,7 +50,6 @@ public class CadastroNodeActivity extends AppCompatActivity {
 
         estados_doBrasil = getResources().getStringArray(R.array.cidades); // Array se encontra em => res > values > array.xml
         campoCidades = findViewById(R.id.spinner_CastNodeCidades); // Botão Spinner
-
         campoCidades.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -52,6 +64,13 @@ public class CadastroNodeActivity extends AppCompatActivity {
 
             }
         });
+
+        botaoFechar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 
@@ -59,13 +78,13 @@ public class CadastroNodeActivity extends AppCompatActivity {
     public void salvarNode(View view){
         if (validarCamposSalvarNode()){
             movInventario = new MovInventario();
-            movInventario.setNode(campoNode.getText().toString());
+            movInventario.setNode(campoNode.getText().toString().toUpperCase());
             movInventario.setCidade(cidade);
             movInventario.setBairro(campoBairro.getText().toString());
             movInventario.setEndereco(campoEndereco.getText().toString());
             movInventario.setNumero(campoNumero.getText().toString());
             movInventario.salvar();
-            finish();
+
         }
 
     }
@@ -82,6 +101,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
                     if (!textEndereco.isEmpty()){
                         if (!textNumero.isEmpty()){
 
+                            carregarProgressBar();
                             return true;
 
                         }else {
@@ -111,6 +131,43 @@ public class CadastroNodeActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
+
+    public void carregarProgressBar(){
+
+        progressBarCadastroNode.setVisibility(View.VISIBLE);
+        //this.progresso = this.progresso + 10;
+        //progressBarCadastroNode.setProgress(this.progresso);
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (int i = 0; i <= 25; i++){
+                    System.out.println(i);
+
+                    final int progresso = i; // Éssa variável tenque ser final
+
+                    runOnUiThread(new Runnable() {//Thread responsável para atualizar a interface
+                        @Override
+                        public void run() {
+
+                            progressBarCadastroNode.setProgress(progresso);
+                            if (progresso == 25){
+                                finish();
+                            }
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 
 }
