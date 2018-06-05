@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.danielrsoares.nodemaps.R;
 import com.danielrsoares.nodemaps.model.MovInventario;
 
@@ -29,6 +30,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
     private MovInventario movInventario;
     private String[] estados_doBrasil;
     private String cidade;
+    private int cidadeInvalida;
 
 
     @Override
@@ -48,6 +50,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
         campoNumero = findViewById(R.id.editTextCadastroNumero);
 
 
+        //Pegando a posicao do Spinner no array cidades
         estados_doBrasil = getResources().getStringArray(R.array.cidades); // Array se encontra em => res > values > array.xml
         campoCidades = findViewById(R.id.spinner_CastNodeCidades); // Botão Spinner
         campoCidades.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -55,7 +58,8 @@ public class CadastroNodeActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //String valor = parent.getItemAtPosition(position).toString();
                 //Toast.makeText(CadastroNodeActivity.this, cidade, Toast.LENGTH_SHORT).show();
-                cidade = estados_doBrasil[position];
+                cidadeInvalida = position; //Recebe a posição ex: 0, 1, 2 do Spinner | Pegando Array de Inteiros
+                cidade = estados_doBrasil[position]; // Pegando array de Strings
 
             }
 
@@ -65,6 +69,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
             }
         });
 
+        //Botão Fechar ActivityCadastro (X)
         botaoFechar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +80,8 @@ public class CadastroNodeActivity extends AppCompatActivity {
 
 
     //Movimentação serão salvas no firebase
-    public void salvarNode(View view){
-        if (validarCamposSalvarNode()){
+    public void salvarNode(View view) {
+        if (validarCamposSalvarNode()) {
             movInventario = new MovInventario();
             movInventario.setNode(campoNode.getText().toString().toUpperCase());
             movInventario.setCidade(cidade);
@@ -90,50 +95,58 @@ public class CadastroNodeActivity extends AppCompatActivity {
     }
 
     //Método para Validar os Campos Preenchidos cadastro Node antes de Salvar
-    public Boolean validarCamposSalvarNode(){
+    public Boolean validarCamposSalvarNode() {
         String textNode = campoNode.getText().toString();
         String textBairro = campoBairro.getText().toString();
         String textEndereco = campoEndereco.getText().toString();
         String textNumero = campoNumero.getText().toString();
+        String spinnerCidade = cidade;
 
-        if (!textNode.isEmpty()){
-                if (!textBairro.isEmpty()){
-                    if (!textEndereco.isEmpty()){
-                        if (!textNumero.isEmpty()){
+        if (cidadeInvalida > 0) { // Confirma se a Posição da Cidade é maior que 0. Pois (0) é apenas um título do Array que não deve ser inserido na pesquisa
+            if (!textNode.isEmpty()) {
+                if (!textBairro.isEmpty()) {
+                    if (!textEndereco.isEmpty()) {
+                        if (!textNumero.isEmpty()) {
 
                             carregarProgressBar();
                             return true;
 
-                        }else {
+                        } else {
                             Toast.makeText(CadastroNodeActivity.this,
                                     "Preencha o Campo Número",
                                     Toast.LENGTH_SHORT).show();
                             return false;
                         }
 
-                    }else {
+                    } else {
                         Toast.makeText(CadastroNodeActivity.this,
                                 "Preencha o Campo Endereço",
                                 Toast.LENGTH_SHORT).show();
                         return false;
                     }
 
-                }else {
+                } else {
                     Toast.makeText(CadastroNodeActivity.this,
                             "Preencha o Cammpo Bairro",
                             Toast.LENGTH_SHORT).show();
                     return false;
                 }
 
-        }else {
+            } else {
+                Toast.makeText(CadastroNodeActivity.this,
+                        "Preencha o Campo Node",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
             Toast.makeText(CadastroNodeActivity.this,
-                    "Preencha o Campo Node",
+                    "Escolha uma Cidade",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
     }
 
-    public void carregarProgressBar(){
+    public void carregarProgressBar() {
 
         progressBarCadastroNode.setVisibility(View.VISIBLE);
         //this.progresso = this.progresso + 10;
@@ -144,7 +157,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                for (int i = 0; i <= 25; i++){
+                for (int i = 0; i <= 25; i++) {
                     System.out.println(i);
 
                     final int progresso = i; // Éssa variável tenque ser final
@@ -154,7 +167,7 @@ public class CadastroNodeActivity extends AppCompatActivity {
                         public void run() {
 
                             progressBarCadastroNode.setProgress(progresso);
-                            if (progresso == 25){
+                            if (progresso == 25) {
                                 finish();
                             }
                         }
